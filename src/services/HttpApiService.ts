@@ -40,7 +40,6 @@ class HttpApiService {
    */
   private createAxiosInstance() {
     this._axiosInstance = axios.create(this.defaultOptions());
-
     // this.checkAutorization()
 
     // Add a request interceptor
