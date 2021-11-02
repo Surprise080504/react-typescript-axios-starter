@@ -1,4 +1,4 @@
-import HttpApiService from "../services/httpApiService";
+import HttpApiService from "../services/HttpApiService";
 
 const API_BASE = `${process.env.REACT_APP_API_URI}`;
 const CATS_ENDPOINT = `${API_BASE}/cats`;
