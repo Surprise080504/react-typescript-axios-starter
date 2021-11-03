@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components';
-import { findAllCats } from '../src/api/catsApi';
+import { findAllCats, createCat } from '../src/api/catsApi';
+import { Cat } from './model/cat';
 
 const Button = styled.button`
   background: purple;
@@ -14,10 +15,27 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: space-between;
+`;
+
 function App() {
 
-  const handleClick = async () => {
+  const findAll = async () => {
     const response = await findAllCats();
+    console.log(response.data);
+  }
+
+  const create = async () => {
+    const newCat: Cat = {
+      name: "Kitty",
+      age: 3,
+      breed: "Baby Kitty"
+    }
+    const response = await createCat(newCat);
     console.log(response.data);
   }
 
@@ -28,7 +46,10 @@ function App() {
         <p>
           Cats Api with NestJS
         </p>
-        <Button onClick={handleClick}>Find All Cats</Button>
+        <Container>
+          <Button onClick={findAll}>Find All Cats</Button>
+          <Button onClick={create}>Create Cat</Button>
+        </Container>
       </header>
     </div>
   );

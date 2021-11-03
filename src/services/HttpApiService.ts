@@ -1,11 +1,5 @@
 import axios, { AxiosInstance, AxiosPromise, AxiosResponse } from 'axios';
 
-export enum EnumContentType {
-  JSON = "application/json",
-  XML = "application/xml",
-  FORM = "application/x-www-form-urlencoded",
-}
-
 class HttpApiService {
   private _axiosInstance: AxiosInstance | undefined;
   private _baseURL: string;
