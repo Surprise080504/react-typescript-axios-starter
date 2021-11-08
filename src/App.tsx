@@ -26,7 +26,6 @@ function App() {
 
   const findAll = async () => {
     const response = await findAllCats();
-    console.log(response.data);
   }
 
   const create = async () => {
@@ -36,7 +35,6 @@ function App() {
       breed: "Baby Kitty"
     }
     const response = await createCat(newCat);
-    console.log(response.data);
   }
 
   return (
